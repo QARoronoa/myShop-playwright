@@ -9,6 +9,8 @@ class HomePage(BasePage):
     #locators
         self.signIn_button = page.locator(".login")
         self.userAccount_link = page.locator('.account')
+        self.search_bar_field = page.locator('#search_query_top')
+        self.search_button = page.locator('button.btn.btn-default.button-search')
 
     #methodes
     def verify_home_page_title(self):
@@ -19,4 +21,11 @@ class HomePage(BasePage):
 
     def verify_user_is_connected(self):
         expect(self.userAccount_link).to_be_visible()
+
+    def search_a_product_in_search_bar(self):
+        self.fill_input_field(self.search_bar_field, "blouse")
+
+    def click_on_search_button(self):
+        self.click_on_visible_element(self.search_button)
+
 

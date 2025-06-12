@@ -5,7 +5,7 @@ from pagesObject.LoginPage import LoginPage
 from pagesObject.AccountPage import AccountPage
 
 
-def test_with_valid_credentials(setup, login_valid):
+def test_connect_with_valid_credentials(setup, login_valid):
     home_page = HomePage(setup)
     login_page = LoginPage(setup)
     account_page = AccountPage(setup)

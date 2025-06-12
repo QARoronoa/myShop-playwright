@@ -20,6 +20,6 @@ def enter_email_create_account():
 def fill_out_form():
      return Login.form_create_account()
 
-@pytest.fixture(params=[{"emailAdress" : "roronoa12@ymail.com", "password": "123456"}])
-def login_valid(request):
-     return request.param
+@pytest.fixture
+def login_valid():
+     return {"emailAdress" : "roronoa12@ymail.com", "password": "123456"}
