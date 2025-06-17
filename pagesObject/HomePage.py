@@ -11,6 +11,8 @@ class HomePage(BasePage):
         self.userAccount_link = page.locator('.account')
         self.search_bar_field = page.locator('#search_query_top')
         self.search_button = page.locator('button.btn.btn-default.button-search')
+        self.message_card_empty = page.locator('.ajax_cart_no_product')
+
 
     #methodes
     def verify_home_page_title(self):
@@ -27,5 +29,9 @@ class HomePage(BasePage):
 
     def click_on_search_button(self):
         self.click_on_visible_element(self.search_button)
+
+    def verify_cart_is_empty(self):
+        self.verify_element_is_visible(self.message_card_empty)
+        self.verify_contain_text(self.message_card_empty, "(empty)")
 
 

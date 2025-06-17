@@ -16,6 +16,7 @@ class BasePage:
 
     def click_on_visible_element(self, locator: Locator):
         expect(locator).to_be_visible()
+        expect(locator).to_be_enabled()
         locator.click()
 
     def fill_input_field(self, locator: Locator, text):
