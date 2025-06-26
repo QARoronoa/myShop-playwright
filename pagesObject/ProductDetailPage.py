@@ -13,6 +13,7 @@ class ProductDetailPage(BasePage):
         self.white_color_button = page.locator('#color_8')
         self.add_to_cart_button = page.locator('#add_to_cart')
         self.continue_shopping_button_popin = page.locator('.continue')
+        self.proceed_to_checkout_popin = page.get_by_role('link', name="Proceed to checkout")
         self.item_name_cart_block = page.locator('.cart_block_product_name')
 
     #methodes
@@ -31,3 +32,6 @@ class ProductDetailPage(BasePage):
 
     def verify_item_is_in_cart(self):
         self.verify_contain_text(self.item_name_cart_block, "Blouse")
+
+    def click_on_proceed_to_checkout_popin(self):
+        self.click_on_visible_element(self.proceed_to_checkout_popin)
