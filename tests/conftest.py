@@ -1,5 +1,6 @@
 import pytest
 from data.LoginData import Login
+from data.AccountData import Account
 @pytest.fixture(scope="function")
 def setup(playwright, request):
      browser = playwright.chromium.launch(headless=False)
@@ -23,3 +24,7 @@ def fill_out_form():
 @pytest.fixture
 def login_valid():
      return {"emailAdress" : "roronoa12@ymail.com", "password": "123456"}
+
+@pytest.fixture
+def address_form():
+     return Account.fill_address_form()

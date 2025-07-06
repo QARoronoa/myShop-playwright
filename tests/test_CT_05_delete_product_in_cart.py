@@ -20,12 +20,12 @@ def test_delete_product_in_cart(setup):
 
     search_page.verify_search_item_is_visible("blouse")
     search_page.scroll_to_item_image()
-    search_page.click_on_quick_view_button()
+    search_page.click_on_more_button()
 
     productDetail_page.verify_title_of_page("Blouse - My Shop")
     productDetail_page.click_on_white_button()
     productDetail_page.click_on_add_to_cart_button()
-    productDetail_page.click_on_proceed_to_checkout_popin()
+    productDetail_page.click_on_proceed_to_checkout_popup_button()
 
 
     #delete product

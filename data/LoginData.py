@@ -21,3 +21,4 @@ class Login:
             "monthBirth": str(random.randint(1, 13)),
             "yearBirth": faker.year()
         }
+

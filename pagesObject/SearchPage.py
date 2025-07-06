@@ -11,6 +11,8 @@ class SearchPage(BasePage):
         self.item_search = page.locator('.lighter')
         self.item_image = page.locator("div[itemtype='http://schema.org/Product']")
         self.more_button = page.get_by_role('link', name="More")
+        self.quick_view = page.locator(".quick-view")
+
 
     #methodes
     def verify_redirected_to_search_page(self, title):
@@ -23,5 +25,10 @@ class SearchPage(BasePage):
     def scroll_to_item_image(self):
         self.item_image.hover()
 
-    def click_on_quick_view_button(self):
+    def click_on_more_button(self):
         self.click_on_visible_element(self.more_button)
+
+    def click_on_quick_view_button(self):
+        self.click_on_visible_element(self.quick_view)
+
+

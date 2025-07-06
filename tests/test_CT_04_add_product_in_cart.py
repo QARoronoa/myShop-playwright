@@ -17,7 +17,7 @@ def test_add_product_in_cart(setup, login_valid):
 
     search_page.verify_search_item_is_visible("blouse")
     search_page.scroll_to_item_image()
-    search_page.click_on_quick_view_button()
+    search_page.click_on_more_button()
 
     productDetail_page.verify_title_of_page("Blouse - My Shop")
     productDetail_page.click_on_white_button()

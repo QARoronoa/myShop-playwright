@@ -8,14 +8,14 @@ class AccountPage(BasePage):
 
 
         #locators
-        self.alert_sucess_message = page.locator('p.alert')
+        self.alert_success_message = page.locator('p.alert')
 
         #methodes
     def verify_redirection_to_myAccount(self, title):
         self.verify_title_of_page(title)
 
     def verify_sucess_message_creation_account(self):
-        self.verify_contain_text(self.alert_sucess_message, "Your account has been created.")
+        self.verify_contain_text(self.alert_success_message, "Your account has been created.")
 
 
 
