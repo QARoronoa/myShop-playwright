@@ -4,12 +4,16 @@ from data.AccountData import Account
 @pytest.fixture(scope="function")
 def setup(playwright, request):
      browser = playwright.chromium.launch(headless=False)
+     # context = browser.new_context(record_video_dir="videos/")
      context = browser.new_context()
+     context.tracing.start(screenshots=True, snapshots=True, sources=True)
 
      page = context.new_page()
+     # page.set_viewport_size({'width':1920, 'height': 1080})
      page.goto("http://www.automationpractice.pl/index.php")
      yield page
 
+     context.tracing.stop(path="trace.zip")
      context.close()
      browser.close()
 
