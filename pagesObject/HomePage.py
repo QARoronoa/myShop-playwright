@@ -13,6 +13,7 @@ class HomePage(BasePage):
         self.search_button = page.locator('button.btn.btn-default.button-search')
         self.message_card_empty = page.locator('.ajax_cart_no_product')
         self.contacUS_link = page.get_by_role('link', name='Contact us')
+        self.women_category_link = page.get_by_role('link', name='Women').nth(0)
 
 
     #methodes
@@ -38,4 +39,6 @@ class HomePage(BasePage):
     def click_on_contact_us_link(self):
         self.click_on_visible_element(self.contacUS_link)
 
-
+    def click_on_women_category(self):
+        self.click_on_visible_element(self.women_category_link)
+        self.page.wait_for_timeout(5000)
