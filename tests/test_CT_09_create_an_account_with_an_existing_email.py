@@ -1,9 +1,11 @@
+import time
+
 from pagesObject.HomePage import HomePage
 from pagesObject.LoginPage import LoginPage
 from pagesObject.AccountPage import AccountPage
 
 
-def test_connect_with_valid_credentials(setup, login_valid):
+def test_create_an_account_with_an_existing_email(setup, create_account):
     home_page = HomePage(setup)
     login_page = LoginPage(setup)
     account_page = AccountPage(setup)
@@ -15,9 +17,11 @@ def test_connect_with_valid_credentials(setup, login_valid):
     #click on signin button
     home_page.click_on_signIn_button()
 
-    #enter email adress
-    login_page.enter_email_and_password(login_valid["emailAdress"], login_valid["password"])
-    login_page.click_on_signIn_button()
+    #enter an email
+    login_page.enter_email_create_account(create_account["emailAdress"])
 
-    #verify user is connected
-    home_page.verify_user_is_connected()
+    #cliquer sur le bouton create account
+    login_page.click_on_button_create_account()
+
+    #verify error message
+    login_page.verify_error_message_is_visible()

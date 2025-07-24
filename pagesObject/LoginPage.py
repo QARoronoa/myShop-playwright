@@ -23,6 +23,7 @@ class LoginPage(BasePage):
         self.email_login = page.locator('#email')
         self.password_login = page.locator('#passwd')
         self.signIn_button = page.get_by_role("button", name="Sign in")
+        self.error_message_alert = page.locator('.alert')
 
 
 
@@ -53,6 +54,9 @@ class LoginPage(BasePage):
 
     def click_on_signIn_button(self):
         self.click_on_visible_element(self.signIn_button)
+
+    def verify_error_message_is_visible(self):
+        self.verify_contain_text(self.error_message_alert, "this email address has already been registered")
 
 
 
