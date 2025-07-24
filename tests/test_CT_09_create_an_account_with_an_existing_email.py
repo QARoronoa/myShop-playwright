@@ -24,4 +24,4 @@ def test_create_an_account_with_an_existing_email(setup, create_account):
     login_page.click_on_button_create_account()
 
     #verify error message
-    login_page.verify_error_message_is_visible()
+    login_page.verify_error_message_is_visible("this email address has already been registered")
