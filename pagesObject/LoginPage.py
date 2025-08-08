@@ -1,5 +1,3 @@
-import time
-
 from playwright.sync_api import Page
 from pagesObject.BasePage import BasePage
 
@@ -40,7 +38,6 @@ class LoginPage(BasePage):
         self.fill_input_field(self.firstName_field, firstName)
         self.fill_input_field(self.lastName_field, lastName)
         self.fill_input_field(self.password_field, password)
-        time.sleep(1)
         self.dayBirth_field.select_option(value=dayBirth)
         self.monthBirth_field.select_option(value=monthBirth)
         self.yearBirth_field.select_option(value=yearBirth)

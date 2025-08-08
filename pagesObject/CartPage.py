@@ -18,6 +18,7 @@ class CartPage(BasePage):
         self.pay_bank_wire_methode = page.locator('.bankwire')
         self.confirmOrder_button = page.get_by_role('button', name='I confirm my order')
         self.success_order_message = page.locator('.alert-success')
+
     #methodes
     def verify_redirected_to_cart_page(self):
         self.verify_contain_text(self.shopping_cart_summary_title, "Shopping-cart summary")

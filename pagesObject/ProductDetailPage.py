@@ -23,9 +23,8 @@ class ProductDetailPage(BasePage):
         self.verify_title_of_page(title)
 
     def click_on_white_button(self):
-        time.sleep(1)
         self.click_on_visible_element(self.white_color_button)
-        time.sleep(1)
+        self.page.wait_for_timeout(2000)
 
     def click_on_add_to_cart_button(self):
         self.click_on_visible_element(self.add_to_cart_button)
@@ -40,7 +39,7 @@ class ProductDetailPage(BasePage):
         self.click_on_visible_element(self.proceed_to_checkout_button_popup)
 
     def add_item_on_cart_from_frame(self):
-        time.sleep(2)
+        self.page.wait_for_timeout(2000)
         self.frame.locator('#color_8').click()
         self.frame.locator('#add_to_cart').click()
 

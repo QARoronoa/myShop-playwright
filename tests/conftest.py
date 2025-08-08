@@ -1,9 +1,11 @@
 import pytest
+from playwright.sync_api import Playwright
+
 from data.LoginData import Login
 from data.AccountData import Account
 @pytest.fixture(scope="function")
-def setup(playwright, request):
-     browser = playwright.chromium.launch(headless=False)
+def setup(playwright: Playwright, request):
+     browser = playwright.webkit.launch(headless=False)
      # context = browser.new_context(record_video_dir="videos/")
      context = browser.new_context()
      context.tracing.start(screenshots=True, snapshots=True, sources=True)

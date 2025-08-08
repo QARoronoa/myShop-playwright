@@ -32,3 +32,4 @@ class SearchPage(BasePage):
         self.click_on_visible_element(self.quick_view)
 
 
+
